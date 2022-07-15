@@ -1,6 +1,6 @@
 import { Author } from 'src/authors/entities/author.entity';
 import { Publisher } from 'src/publishers/entities/publisher.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, Index, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
 @Entity()
 export class Book {
@@ -10,6 +10,7 @@ export class Book {
     @Column()
     name: string;
 
+    @Index({ unique: true })
     @Column()
     isnb: string;
 

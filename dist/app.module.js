@@ -14,21 +14,19 @@ const books_module_1 = require("./books/books.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const authors_module_1 = require("./authors/authors.module");
 const publishers_module_1 = require("./publishers/publishers.module");
+const books_entity_1 = require("./books/books/books.entity");
+const author_entity_1 = require("./authors/entities/author.entity");
+const publisher_entity_1 = require("./publishers/entities/publisher.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
-                type: 'postgres',
-                host: '127.0.0.1',
-                port: 5432,
-                username: 'admin',
-                password: 'admin',
-                database: 'nestjs',
+                type: 'sqlite',
+                database: 'db',
+                entities: [books_entity_1.Book, author_entity_1.Author, publisher_entity_1.Publisher],
                 synchronize: true,
-                entities: ['src/**/*.entity{.ts,.js}'],
-                migrations: ['./src/migrations/*.ts'],
             }),
             books_module_1.BooksModule,
             authors_module_1.AuthorsModule,

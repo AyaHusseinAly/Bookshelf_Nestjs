@@ -5,26 +5,34 @@ import { BooksModule } from './books/books.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthorsModule } from './authors/authors.module';
 import { PublishersModule } from './publishers/publishers.module';
+import { Book } from './books/books/books.entity';
+import { Author } from './authors/entities/author.entity';
+import { Publisher } from './publishers/entities/publisher.entity';
 
 
 @Module({
   imports: [
             TypeOrmModule.forRoot({
-              type: 'postgres',
-              host: '127.0.0.1',
-              port: 5432,
-              username: 'admin',
-              password: 'admin',
-              database: 'nestjs',
+  
+              type:'sqlite',
+              database: 'db',
+              entities: [Book, Author, Publisher],
+              // entities: [__dirname + '/**/*.entity{.ts,.js}'],
+
+              // type: 'postgres',
+              // host: 'localhost',
+              // port: 5432,
+              // username: 'admin',
+              // password: null,
+              // database: 'nestjs',
               synchronize: true,
-              entities: ['src/**/*.entity{.ts,.js}'],
-              migrations: ['./src/migrations/*.ts'],
-              // ssl: false,
-              // extra: {
-              //   ssl: {
-              //     rejectUnauthorized: false,
-              //   },
-              // }
+              // entities: [Book, Author, Publisher],
+              // // ssl: false,
+              // // extra: {
+              // //   ssl: {
+              // //     rejectUnauthorized: false,
+              // //   },
+              // // }
             }),
           BooksModule,
           AuthorsModule,
