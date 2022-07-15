@@ -24,50 +24,28 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
+NestJS API for Simple Bookshelf App
 
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ docker-compose build  
+$ docker-compose up   
 ```
 
-## Test
+## Available Endpoints
 
-```bash
-# unit tests
-$ npm run test
+| Method  | URL | 
+| ------- | --- | 
+| `GET`  |http://localhost:3000/books |  
+| `GET`  |http://localhost:3000/authors |  
+| `GET`  |http://localhost:3000/publishers |  
+| `GET`  |http://localhost:3000/books/publishers/:id |  
+| `GET`  |http://localhost:3000/books/authors/:id |  
 
-# e2e tests
-$ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
-```
 
-## Support
+## Screenshots
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+![techBricks_authors](https://user-images.githubusercontent.com/71220483/179128048-0a52ac42-3935-4d26-a2bd-7964cc0175a9.JPG)  
+![techBricks_publishers](https://user-images.githubusercontent.com/71220483/179128056-5ba2608d-d829-4fe0-99f3-f6212bec065c.JPG)
